@@ -1,0 +1,81 @@
+<div class="cont">
+
+    <nav class="modal-header">
+        <a class="navbar-brand">
+            <div *ngIf="userAction==='add'">ADD</div>
+            <div *ngIf="userAction==='edit'">Edit</div>
+        </a>
+    </nav>
+
+
+    <form>
+        <div class="form-group col-md-4">
+            <label for="inputState">School</label>
+            <select id="inputState" class="form-control" (change)="onChangeSelectValue($event)">
+                <option selected value="">Select School Name </option>
+                <option value="cairo School">Cairo School</option>
+                <option value="britsh School">Britsh School</option>
+                <option value="german School">German School</option>
+                <option value="poland School">poland School</option>
+            </select>
+        </div>
+    </form>
+
+    <!-- edit classes -->
+
+    <table *ngIf="selectedSchool && userAction==='edit'" class="table table-borderless">
+        <thead>
+            <tr>
+                <th scope="col">Section ( optional )</th>
+                <th scope="col">Class Name</th>
+                <th scope="col">Grade</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let class of classes; let i =index">
+            <tr class="class">
+                <td><input class="form-control" type="text" [value]="class.section"></td>
+                <td><input class="form-control" type="text" [value]="class.className"></td>
+                <td><input class="form-control" type="number" [value]="class.grade"></td>
+                <td><button class="btn" (click)="onDeleteTask(class.id)"><i class="far fa-trash-alt"></i></button></td>
+            </tr>
+
+        </tbody>
+        <button class="btn btn-primary">Done</button>
+    </table>
+
+    <!-- add classes -->
+
+    <table *ngIf="selectedSchool &&userAction==='add'" class="table table-borderless">
+        <thead>
+            <tr>
+                <th scope="col">Section ( optional )</th>
+                <th scope="col">Class Name</th>
+                <th scope="col">Grade</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="class" *ngFor="let class of newClasses">
+                <td><input class="form-control" type="text" [value]="class.section"></td>
+                <td><input class="form-control" type="text" [value]="class.className"></td>
+                <td><input class="form-control" type="number" [value]="class.grade"></td>
+                <td><button class="btn" (click)="onDeleteTask(class.id)"><i class="far fa-trash-alt"></i></button>
+                </td>
+            </tr>
+            <tr class="class">
+                <td><input [(ngModel)]="class.section" class="form-control" type="text"></td>
+                <td><input [(ngModel)]="class.className" class="form-control" type="text"></td>
+                <td><input [(ngModel)]="class.grade" class="form-control" type="text"></td>
+                <!-- <td><button class="btn">delete</button></td> -->
+            </tr>
+        </tbody>
+        <button class="btn btn-default" (click)="submit()"><i class="fas fa-plus-circle"></i> Add Class</button>
+
+
+    </table>
+
+
+
+
+</div>

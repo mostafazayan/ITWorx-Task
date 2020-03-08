@@ -1,0 +1,38 @@
+body {
+  padding: auto;
+  margin: auto;
+}
+.cont {
+  min-height: 500px;
+  height: fit-content;
+  padding: auto;
+  margin: auto;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  select {
+    width: auto !important;
+  }
+  form {
+    margin-top: 10px;
+  }
+}
+nav {
+  width: 100% !important;
+  background-color: rgb(105, 0, 131);
+  a {
+    color: white;
+  }
+}
+table {
+  border: 2px solid lightgray;
+  width: 80%;
+  button {
+    margin: 20px;
+    color: purple;
+    i {
+      color: purple;
+    }
+  }
+}

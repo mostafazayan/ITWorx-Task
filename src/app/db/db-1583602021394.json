@@ -1,0 +1,32 @@
+{
+  "classes": [
+    {
+      "id": 1,
+      "section": "A",
+      "className": "class name 1",
+      "school": "Britsh",
+      "grade": "1"
+    },
+    {
+      "id": 1,
+      "section": "A",
+      "className": "class name 1",
+      "school": "Britsh",
+      "grade": "1"
+    },
+    {
+      "id": 1,
+      "section": "A",
+      "className": "class name 1",
+      "school": "Britsh",
+      "grade": "1"
+    },
+    {
+      "id": 1,
+      "section": "A",
+      "className": "class name 1",
+      "school": "Britsh",
+      "grade": "1"
+    }
+  ]
+}

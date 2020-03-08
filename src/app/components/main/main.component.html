@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="left-side">
+
+
+        <div class="input-group">
+            <input type="email" class="form-control" placeholder="Search My Classes " [(ngModel)]="className"
+                (input)="searchClasses()">
+            <span class="input-group-addon">
+                <i class="fa fa-search"></i>
+            </span>
+        </div>
+
+
+
+
+        <div class="alert alert-primary" role="alert" *ngIf="noContent">There's no classes</div>
+        <div class="classes-container" *ngFor="let class of classes; let i = index">
+            <div class="class">
+                <h2> C.{{i+1}}</h2>
+                <div class="class-body">
+                    <h3> {{class.className}} </h3>
+                    <h5> School: {{class.school}}</h5>
+                    <h6> Grade: {{class.grade}}</h6>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="right-side">
+        <div class="dropdown">
+            <button class="btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-h"></i> </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <button class="dropdown-item" (click)="addNewClass()">Add Class</button>
+                <button [disabled]="noContent" class="dropdown-item" (click)="editClass()">Edit Class</button>
+            </div>
+        </div>
+        <button (click)="addNewClass()" class="btn add"><i class="fas fa-plus"></i></button>
+    </div>
+
+</div>
